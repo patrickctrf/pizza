@@ -95,7 +95,15 @@ def menu(request, **context):
     template = loader.get_template('delivery/menu.html')
     
     msg = "Bem-vindo ao Menu! Escolha a quantidade e o tamanho dos sabores que desejar."
-    
+    lists = Pizza.objects.all()
+#    lists2 = []
+#    lists3 = []
+#    
+#    # All tags needed in this template.
+#    for item in lists:
+#        lists2 = item.flavor.lower + "qtd"
+#        
+#    
     context = {"lists":lists, "msg":msg}
     return HttpResponse(template.render(context, request))
     
@@ -143,6 +151,10 @@ def basket_forms(request):
     
     # If user has confirmed its requests, send him to final view.
     if request.POST["botaoforms"] == "Salvar":
+    
+        # Set this client's request as not finished yet.
+        client.finished = False
+        client.save()
         
         return redirect("/delivery/final")
        
@@ -158,6 +170,7 @@ def final(request):
     
     if len(Cliente.objects.filter(user__username=request.user.username)) != 0:
         client = Cliente.objects.filter(user__username=request.user.username)[0]
+        
     else:
         return redirect("/")
     

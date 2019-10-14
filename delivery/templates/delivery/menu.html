@@ -139,14 +139,9 @@ tr:nth-child(even) {
 <form action="{% url 'delivery:menu_forms' %}" method="post" style="position: relative; top: 24px; padding: 8px;">
 {% csrf_token %}
 
-    <b>Calabresa</b><br> Quantidade <input type="number" class="inputes" name="calabresaqtd" min="0" max="3" value=0> - Tamanho (cm) <input type="number" class="inputes"  name="calabrezasize" step=10 min="10" max="30" value=10><br><br><br>
-
-    <b>Mussarela</b><br> Quantidade <input type="number" class="inputes" name="mussarelaqtd" min="0" max="3" value=0> - Tamanho (cm) <input type="number" class="inputes"  name="mussarelasize" step=10 min="10" max="30" value=10><br><br><br>
-
-    <b>Frango com Catupiry</b><br> Quantidade <input type="number" class="inputes" name="frangoqtd" min="0" max="3" value=0> - Tamanho (cm) <input type="number" class="inputes"  name="frangosize" step=10 min="10" max="30" value=10><br><br><br>
-      
-    <b>Portuguesa</b><br> Quantidade <input type="number" class="inputes" name="portuguesaqtd" min="0" max="3" value=0> - Tamanho (cm) <input type="number" class="inputes"  name="portuguesasize" step=10 min="10" max="30" value=10><br><br><br>
-
+    {% for item in lists %}
+      <b>{{item.flavor}}</b><br> Quantidade <input type="number" class="inputes" name={{item.flavor.lower|add:"qtd"}} min="0" max="3" value=0> - Tamanho (cm) <input type="number" class="inputes"  name="{{item.flavor.lower|add:"size"}}" step=10 min="10" max="30" value=10><br><br><br>
+    {% endfor %}
 
     <input type="submit" name="botaoforms" value="Pedir" class="button button-fundo-laranja">
 
