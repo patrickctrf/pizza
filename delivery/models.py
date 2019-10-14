@@ -28,7 +28,7 @@ class Pedido(models.Model):
 class Cliente(models.Model):
     name = models.CharField(max_length=50)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    finished = models.BooleanField(default=False)
+    finished = models.BooleanField(default=True)
     pedidos = models.ManyToManyField(Pedido)
     
     def __str__(self):

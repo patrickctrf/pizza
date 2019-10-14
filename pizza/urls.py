@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import include, path
+from . import views # Chamamos as views que nos colocamos como padrao do projeto (cattlemonitor), nao do app (tags)
+                    # from 'este diretorio', importe 'arquivo views.py'
 urlpatterns = [
+    path('', views.telahome, name='telahome'),
+    path('delivery/', include('delivery.urls')),
     path('admin/', admin.site.urls),
 ]

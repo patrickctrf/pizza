@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 4px;
+}
+
+.button-fundo-azul {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button-fundo-azul:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button-fundo-laranja {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #1E90FF;
+}
+
+.button-fundo-laranja:hover {
+  background-color: #1E90FF;
+  color: white;
+}
+
+div.col30pxright {
+  position: relative;
+  right: 30px;
+}
+
+div.col30pxleft {
+  position: relative;
+  right: 30px;
+}
+
+div.buttonlogout {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+.btn-buttonlogout {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+.btn-col30pxright {
+  position: relative;
+  right: 30px;
+}
+
+.buttoncol30pxleft {
+  position: relative;
+  left: 30px;
+}
+
+
+.heade
+{
+background: none repeat scroll 0 0 #E0E0E0;
+border-radius: 5px 5px 5px 5px;
+height: 50px;
+position: absolute;
+top: 0;
+width: 940px;
+}
+.heade h1   {  line-height: 0; }
+
+</style>
+</head>
+<body style="background-color: #caebff;">
+
+
+
+<div align="center" style="position=absolute; margin-top: -25px; margin-left: -25px; margin-right: -25px;">
+  <a href="#" style="color: #f0db5b; text-decoration: none">
+    <h1 align="center" style="background-color:#417690; border-bottom: 6px solid lightblue; padding: 8px;">
+        Pizza Django
+    </h1>
+  </a>
+</div>
+
+
+
+<div align="center" style="position: relative; top: 24px; padding: 8px;">
+  <h3 align="center">
+    Bem vindo à Pizza Django! Selecione abaixo a ação desejada.
+  </h3>
+</div>
+
+
+<hr>
+
+
+<div align="center" style="padding: 4px;">
+
+  <button class="button button-fundo-azul btn-col30pxright" onclick="location.href = 'admin';">
+  	Administrar
+  </button>
+
+  <button class="button button-fundo-laranja buttoncol30pxleft" onclick="location.href = 'delivery';">
+    Encomendar
+  </button>
+
+</div>
+
+<h3 align="right" class="btn-buttonlogout" style="padding: 4px;" >
+  <a href="/delivery/final" class="button-cadastrar button-fundo-laranja">
+    Carrinho
+  </a>
+  <a href="/delivery/disconnectlogout" class="button-cadastrar button-fundo-azul">
+    Log Out
+  </a>
+</h3>
+
+</body>
+</html>
+
